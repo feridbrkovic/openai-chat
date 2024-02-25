@@ -8,25 +8,25 @@ A simple chatbot that uses OpenAI's GPT-3 to generate responses to user input. T
 
 In the project directory, you can run:
 
-### `npm install`
+### Install Dependencies
 
-To install all the dependencies required to run the app.
+To install all the dependencies required to run the app run `npm install` in the project directory.
 
-### `Add your OpenAI API key`
+### Add your OpenAI API key
 
 Change the `API_KEY` variable in `server.js` to your OpenAI API key.
 
-### `npm start`
+### Start the App
 
-Runs the app in the development mode.\
+`npm start` runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
 
-### `node server.js`
+### Start the Server
 
-Runs the server that connects to OpenAI's GPT-3 API.\
+`node server.js` Runs the server that connects to OpenAI's GPT-3 API.\
 
 ## Learn More
 
