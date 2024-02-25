@@ -2,7 +2,7 @@
 
 A simple chatbot that uses OpenAI's GPT-3 to generate responses to user input. The chatbot is built using React and the server is built using Node.js and Express. The server connects to OpenAI's GPT-3 API to generate responses to user input.
 
-![OpenAI Chatbot Screenshot](public/images/screenshot.png "Chatbot Screenshot")
+![OpenAI Chatbot Screenshot](public/screenshot.png "Chatbot Screenshot")
 
 ## How To Get Started
 
