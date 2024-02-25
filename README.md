@@ -26,7 +26,7 @@ You may also see any lint errors in the console.
 
 ### Start the Server
 
-`node server.js` Runs the server that connects to OpenAI's GPT-3 API.\
+`node server.js` runs the server that connects to OpenAI's GPT-3 API.\
 
 ## Learn More
 

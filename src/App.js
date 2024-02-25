@@ -19,8 +19,8 @@ const OpenAIChatbot = () => {
   const [response, setResponse] = useState("");
   const [error, setError] = useState("");
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  const handleSubmit = async (event) => {
+    event.preventDefault();
     if (!prompt.trim()) return;
     setError("");
 
@@ -46,7 +46,6 @@ const OpenAIChatbot = () => {
         <div className="form-container">
           <div className="form-group">
             <input
-              className="shadow-sm"
               type="text"
               placeholder="Enter your question here ..."
               value={prompt}
@@ -60,7 +59,7 @@ const OpenAIChatbot = () => {
       </form>
       {error && <div className="error">{error}</div>} {/* Display error if any */}
       <div className="response">
-        <p className="text-light">
+        <p>
           {response || "Submit your question in the text field above ..."}
         </p>
       </div>
