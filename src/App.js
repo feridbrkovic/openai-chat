@@ -1,25 +1,71 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import axios from "axios";
+import "./App.scss";
 
-function App() {
+const HTTP_ENDPOINT = "http://localhost:8080/chatbot";
+
+async function sendPrompt(prompt) {
+  try {
+    const response = await axios.post(HTTP_ENDPOINT, { prompt });
+    return response.data;
+  } catch (error) {
+    console.error("Failed to send prompt:", error);
+    throw error;
+  }
+}
+
+const OpenAIChatbot = () => {
+  const [prompt, setPrompt] = useState("");
+  const [response, setResponse] = useState("");
+  const [error, setError] = useState("");
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (!prompt.trim()) return;
+    setError("");
+
+    try {
+      const resData = await sendPrompt(prompt);
+      setResponse(resData);
+    } catch (error) {
+      setError("Failed to fetch response. Please try again.");
+    }
+
+    setPrompt(""); 
+  };
+
+  const handlePrompt = (event) => {
+    setPrompt(event.target.value);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
+    <div className="container">
+      <h1 className="title">OpenAI Chatbot</h1>
+      <form className="form" onSubmit={handleSubmit}>
+        <label>Ask a question</label>
+        <div className="form-container">
+          <div className="form-group">
+            <input
+              className="shadow-sm"
+              type="text"
+              placeholder="Enter your question here ..."
+              value={prompt}
+              onChange={handlePrompt}
+            />
+          </div>
+          <button className="btn" type="submit">
+            Submit
+          </button>
+        </div>
+      </form>
+      {error && <div className="error">{error}</div>} {/* Display error if any */}
+      <div className="response">
+        <p className="text-light">
+          {response || "Submit your question in the text field above ..."}
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      </div>
     </div>
   );
 }
 
-export default App;
+export default OpenAIChatbot;
