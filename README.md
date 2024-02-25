@@ -12,6 +12,10 @@ In the project directory, you can run:
 
 To install all the dependencies required to run the app.
 
+### `Add your OpenAI API key`
+
+Change the `API_KEY` variable in `server.js` to your OpenAI API key.
+
 ### `npm start`
 
 Runs the app in the development mode.\
