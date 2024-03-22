@@ -6,7 +6,7 @@ A simple chatbot that uses OpenAI's GPT-3 to generate responses to user input. T
 
 ## How To Get Started
 
-In the project directory, you can run:
+In the project directory, you can:
 
 ### Install Dependencies
 
